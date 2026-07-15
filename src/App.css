@@ -1,38 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* 1. Global Reset & Dark Theme */
+body {
+  margin: 0;
+  background-color: #000000; /* Pure Black */
+  color: #ffffff;
+  font-family: 'Inter', sans-serif; /* Body text is clean */
+  -webkit-font-smoothing: antialiased;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* 2. Typography (The "Fatima" Look) */
+h1, h2, h3, .navbar-brand {
+  font-family: 'Playfair Display', serif; /* Elegant Serif Font */
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+/* 3. The Navbar - Minimalist */
+.navbar {
+  background-color: #000000;
+  padding: 2rem 4rem; /* Big spacing like the photo */
+  border-bottom: 1px solid #222; /* Very subtle divider */
+}
+
+.navbar-brand {
+  font-size: 2.5rem; /* Huge, like the Name in photo */
+  color: #ffffff !important;
+}
+
+/* The "Reach out!" / Logout Button style */
+.btn-outline-light {
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50px; /* Pill shape */
+  padding: 10px 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* 4. Login/Dashboard Cards */
+/* Instead of floating cards, we make them blend into the black */
+.card, .form-container {
+  background-color: #0b0b0b !important; /* Slightly lighter black */
+  border: 1px solid #222 !important;
+  border-radius: 0px !important; /* Sharp edges look more premium */
   color: white;
+  padding: 3rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* 5. Inputs & Selectors (Dark Mode Fix) */
+.form-control, .form-select {
+  /* The Dark Grey Background */
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: #ffffff !important; /* White text */
+  border-radius: 0 !important; /* Sharp edges */
+  padding: 15px;
+  font-family: 'Inter', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-control:focus, .form-select:focus {
+  background-color: #222 !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* Fix the dropdown arrow color (Bootstrap defaults to black arrow) */
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+
+/* 6. Buttons (Primary Actions) */
+.btn-primary {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+  border-radius: 0 !important; /* Sharp edges */
+  padding: 12px 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.btn-primary:hover {
+  background-color: #e0e0e0 !important;
+}
+
+/* Deny Button - subtle text only */
+.btn-danger {
+  background: transparent !important;
+  border: 1px solid #d32f2f !important;
+  color: #ef5350 !important;
+  border-radius: 0 !important;
+}
+
+/* 7. Tables (Dark Mode) */
+.table {
+  --bs-table-bg: #000000;
+  --bs-table-color: #a0a0a0;
+  border-color: #222;
+}
+
+.table thead th {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  border-bottom: 1px solid #333;
+  font-weight: 400;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 1.5rem 1rem;
+}
+
+/* Badges - Minimalist */
+.badge {
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 0;
+}
+.bg-success { background-color: #1b5e20 !important; color: #a5d6a7; }
+.bg-warning { background-color: #5d4037 !important; color: #ffccbc; }
+.bg-secondary { background-color: #212121 !important; color: #9e9e9e; }
+.bg-danger { background-color: #b71c1c !important; color: #ffcdd2; }
+
+/* 2. Typography */
+h1, h2, h3, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+/* Fix for invisible text */
+.text-muted, label, .form-label {
+  color: #b0b0b0 !important; /* Light Grey instead of dark grey */
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* 4. Login/Dashboard Cards */
+.card, .form-container {
+  background-color: transparent !important; /* Let it blend or use #050505 */
+  border: none !important;
+  padding: 2rem;
+}
+
+/* 5. Inputs - THE FIX */
+.form-control {
+  /* distinct dark grey background, NOT black */
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: #ffffff !important; /* White text when typing */
+  border-radius: 0 !important;
+  padding: 15px;
+}
+
+.form-control:focus {
+  background-color: #222 !important; /* Slightly lighter on click */
+  border-color: #ffffff !important; /* White border on focus */
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* Fix placeholder text color */
+.form-control::placeholder {
+  color: #555;
 }
