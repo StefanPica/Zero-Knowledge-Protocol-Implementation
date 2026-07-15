@@ -44,7 +44,3 @@ ZeroRental is a web app. A landlord uses it to check a tenant. The landlord chec
 * Java
 * Maven
 
-### 1. Download
-```bash
-git clone [https://github.com/your-username/ZeroRental.git](https://github.com/your-username/ZeroRental.git)
-cd ZeroRental
